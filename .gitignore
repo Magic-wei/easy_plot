@@ -1,0 +1,4 @@
+# ignore figure files
+*.svg
+*.eps
+*.fig
