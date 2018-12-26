@@ -10,7 +10,7 @@ There are two ways to change a figure's properties, one is to change the default
 
 - [Matlab plot](src/matlab/easy_plot.m) gives you an example using the second approach to change figures' properties.
 
-<img src="images/easy_plot_using_matlab_1.png" width="50%" alt="example plotting in matlab"><img src="images/easy_plot_using_matlab_1.png" width="50%" alt="example plotting in matlab">
+<img src="images/easy_plot_using_matlab_1.png" width="50%" alt="example plotting in matlab"><img src="images/easy_plot_using_matlab_2.png" width="50%" alt="example plotting in matlab">
 
 ### Python
 
