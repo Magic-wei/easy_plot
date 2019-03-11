@@ -22,11 +22,11 @@ There are two ways to change a figure's properties, one is to change the default
 
 This function can dramatically reduce our efforts to put some figures into one single figure in a batch approach. Here is an example when I am trying to compose four images into a 2x2 single image. Let's see the inputs
 
-<img src="images/acceleration1.png" width="25%" alt="acceleration1"><img src="images/steering_angle1.png" width="25%" alt="steering_angle1"><img src="images/tracking_error1.png" width="25%" alt="tracking_error1"><img src="images/velocity1.png" width="25%" alt="velocity1">
+<img src="images/fig_splice/acceleration1.png" width="25%" alt="acceleration1"><img src="images/fig_splice/steering_angle1.png" width="25%" alt="steering_angle1"><img src="images/fig_splice/tracking_error1.png" width="25%" alt="tracking_error1"><img src="images/fig_splice/velocity1.png" width="25%" alt="velocity1">
 
 and the output:
 
-<img src="images/outfigure1.png" width="25%" alt="outfigure1">
+<img src="images/fig_splice/outfigure1.png" width="25%" alt="outfigure1">
 
 You can also set the columns of the output image and whether or not cutting image edges by using the function script [spliceFigureFunc.m](src/matlab/fig_splice/spliceFigureFunc.m). To see one example of how to realize this, just have a look at [figure_splice.m](src/matlab/fig_splice/figure_splice.m).
 
