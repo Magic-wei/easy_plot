@@ -1,4 +1,4 @@
-%% Fitting Examples
+%% Basic Examples
 % Author: Wei Wang
 % Date: 12/12/2018
 close all; clear;
@@ -89,8 +89,8 @@ text(1, 0.5, '\fontname{宋体} 这是宋体 \fontname{times new roman} and late
 % for more infomation, search function "savefig" and "saveas" in matlab help documents.
 save_enable = 1;
 if save_enable == 1
-   saveas(f1,'easy_plot_using_matlab','epsc'); % .eps with color
-   saveas(f2,'easy_plot_using_matlab','svg'); % .svg
-%   saveas(f1,'easy_plot_using_matlab','emf'); % .emf, windows only, not for linux 
-   savefig(f1, 'easy_plot_using_matlab'); % save figure to Matlab FIG-file for further edit  
+   saveas(f1,'basic_example_using_matlab','epsc'); % .eps with color
+   saveas(f2,'basic_example_using_matlab','svg'); % .svg
+%   saveas(f1,'basic_example_using_matlab','emf'); % .emf, windows only, not for linux 
+   savefig(f1, 'basic_example_using_matlab'); % save figure to Matlab FIG-file for further edit  
 end
