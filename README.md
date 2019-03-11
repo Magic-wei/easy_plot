@@ -26,7 +26,7 @@ This function can dramatically reduce our efforts to put some figures into one s
 
 and the output:
 
-<img src="images/fig_splice/outfigure1.png" width="25%" alt="outfigure1">
+<img src="images/fig_splice/outfigure1.png" width="50%" alt="outfigure1">
 
 You can also set the columns of the output image and whether or not cutting image edges by using the function script [spliceFigureFunc.m](src/matlab/fig_splice/spliceFigureFunc.m). To see one example of how to realize this, just have a look at [figure_splice.m](src/matlab/fig_splice/figure_splice.m).
 
