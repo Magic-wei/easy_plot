@@ -1,6 +1,8 @@
 %% Figure Splice
 % Author: Wei Wang
-% Date: 2019/02/27
+% Date: 02/27/2019
+% =======================================
+
 clear; close all;
 %% Image Import - Support format: png, jpg, bmp
 imgtype = 'png';

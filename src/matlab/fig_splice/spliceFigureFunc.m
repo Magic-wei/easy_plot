@@ -1,3 +1,8 @@
+% Function SetFigureProperties
+% Author: Wei Wang
+% Date: 02/27/2019
+% =======================================
+
 function outfigure = spliceFigureFunc(image_path, fig_group, column_size, imgtype, cut)
 
 figure_num = length(fig_group);

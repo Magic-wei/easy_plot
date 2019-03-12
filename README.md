@@ -35,6 +35,6 @@ You can also set the columns of the output image and whether or not cutting imag
 * Python > 3.0
 * Matlab > 2014b
 
-## Contribution
+## Contributing
 
 If you have any questions or ideas to improve it, just submit issues or PRs to this repo, and I would say thanks for your contribution.

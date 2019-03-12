@@ -1,6 +1,8 @@
 %% Basic Examples
 % Author: Wei Wang
 % Date: 12/12/2018
+% =======================================
+
 close all; clear;
 %% data generation, fitting and plotting
 % original data
