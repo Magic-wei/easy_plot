@@ -41,4 +41,4 @@ If you have any questions or ideas to improve it, just submit issues or PRs to t
 
 ## Acknowledgement
 
-Thanks to Mr. Mie (咩先生) @科研充电宝 (one offical account on WeChat aiming at sharing various research tricks) to provide the original version of figure splicing based on which I improved and formulated the demonstration of fig_splice.
+Thanks to Mr. Mie (咩先生) @科研充电宝 (one offical account on WeChat aiming at sharing various research tricks) for providing the original version of figure splicing based on which I improved and formulated the demonstration of fig_splice.
