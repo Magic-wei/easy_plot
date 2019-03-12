@@ -38,3 +38,7 @@ You can also set the columns of the output image and whether or not cutting imag
 ## Contributing
 
 If you have any questions or ideas to improve it, just submit issues or PRs to this repo, and I would say thanks for your contribution.
+
+## Acknowledgement
+
+Thanks to Mr. Mie (咩先生) @科研充电宝 (one offical account on WeChat aiming at sharing various research tricks) to provide the original version of figure splicing based on which I improved and formulated the demonstration of fig_splice.
