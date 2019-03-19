@@ -14,7 +14,7 @@ There are two ways to change a figure's properties, one is to change the default
 
 ### fig_plot: advanced figure plot example
 
-This is an example to show how to plot figure based on csv file in a batch approach. Figure property configuration is similar to [basic_example](src/matlab/basic_example/basic_example.m).
+[fig_plot](src/matlab/fig_plot/fig_plot.m) is an example to show how to plot figure based on csv file in a batch approach. Figure property configuration is similar to [basic_example](src/matlab/basic_example/basic_example.m).
 
 ### fig_splice: automatic figure splicing
 
