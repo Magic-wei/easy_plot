@@ -8,6 +8,8 @@ clear; close all;
 save_enable_path = 0;
 save_enable_str = 0;
 save_enable_err = 0;
+save_enable_vec = 0;
+save_enable_acc = 0;
 image_path = pwd;
 global_path_file = fullfile(pwd,'..','..','..','data','fig_plot','global_path.txt');
 state_name = fullfile(pwd,'..','..','..','data','fig_plot','*','state.csv');
@@ -273,5 +275,126 @@ if save_enable_err == 1
   saveas(f_err{i},fullfile(image_path, ['tracking_error',num2str(i),'.svg']));
   saveas(f_err{i},fullfile(image_path, ['tracking_error',num2str(i),'.png']));   
   savefig(f_err{i}, fullfile(image_path, ['tracking_error',num2str(i)]));
+end
+end
+
+%% velocity
+f_vec = cell(length(file), 1);
+for i=1:length(file)
+num = record_size(i);
+linear_v_x = data{i}.linear_v_x;
+time = data{i}.time_cur;
+f_vec{i} = figure('Name','velocity vs. time');
+
+plot(time,linear_v_x,...
+                'LineStyle','-',...
+                'LineWidth',1.5,...
+                'Color','r',...% [189, 189, 189] / 255,...
+                'MarkerEdgeColor','b',...
+                'MarkerFaceColor','b',...
+                'MarkerSize',5), hold on;
+
+x_max = max(time);
+x_min = min(time);
+y_max = max(linear_v_x);
+y_min = min(linear_v_x);
+rx = range([x_min, x_max]);
+ry = range([y_min, y_max]);
+scale = 20;
+x_min_scale = x_min; %round(x_min - rx/scale);
+x_max_scale = round(x_max + rx/scale);
+y_min_scale = y_min; %round(y_min - ry/scale);
+y_max_scale = round(y_max + ry/scale) + 1;
+axis([x_min_scale, x_max_scale, y_min_scale, y_max_scale]);
+xticks(linspace(x_min_scale, x_max_scale, 5));
+yticks(linspace(y_min_scale, y_max_scale, 5));
+
+xlabel('\it{t} / s','FontName','times new roman',...
+    'FontSize',18);
+ylabel('longitudinal velocity \it{v} / (m/s)','FontName','times new roman',...
+    'FontSize',18);
+
+ax1 = gca; % get current axes handle, you can also use 'ax = gca'.
+ax1.FontName = 'times new roman';
+ax1.FontSize = 18;
+% ax1.Color = [239, 237, 245] / 255;
+set(ax1,'LineWidth',1.2); % you can also do settings like this.
+set(ax1,'Box','on');
+ax1.TickDir = 'out';
+set(ax1,'GridLineStyle','--');
+set(ax1,'GridAlpha',0.3);
+% grid on;
+
+% set figure location on the screen,given left lower and right upper
+% points's location.
+set(f_vec{i},'Position',[100 100 650 450]);
+
+if save_enable_vec == 1
+   saveas(f_vec{i},fullfile(image_path, ['velocity',num2str(i),'.svg']));
+   saveas(f_vec{i},fullfile(image_path, ['velocity',num2str(i),'.png']));
+   savefig(f_vec{i}, fullfile(image_path, ['velocity',num2str(i)]));
+end
+end
+
+%% acceleration
+f_acc = cell(length(file), 1);
+for i=1:length(file)
+num = record_size(i);
+linear_acc_y = data{i}.linear_acc_y;
+time = data{i}.time_cur;
+f_acc{i} = figure('Name','acceleration vs. time');
+
+plot(time,linear_acc_y,...
+                'LineStyle','-',...
+                'LineWidth',1.5,...
+                'Color','r',...% [189, 189, 189] / 255,...
+                'MarkerEdgeColor','b',...
+                'MarkerFaceColor','b',...
+                'MarkerSize',5), hold on;
+
+x_max = max(time);
+x_min = min(time);
+y_max = max(linear_acc_y);
+y_min = min(linear_acc_y);
+rx = range([x_min, x_max]);
+ry = range([y_min, y_max]);
+scale = 20;
+x_min_scale = x_min; %round(x_min - rx/scale);
+x_max_scale = round(x_max + rx/scale);
+y_min_scale = round(y_min - ry/scale);
+y_max_scale = round(y_max + ry/scale);
+axis([x_min_scale, x_max_scale, y_min_scale, y_max_scale]);
+xticks(linspace(x_min_scale, x_max_scale, 5));
+yticks(linspace(y_min_scale, y_max_scale, 5));
+
+% lgd = legend('desired steering angle','actual steering angle');
+% lgd.Box = 'off';
+% lgd.Orientation = 'horizontal'; % vertical (default) | horizontal
+% lgd.Location = 'north'; 
+
+xlabel('\it{t} / s','FontName','times new roman',...
+    'FontSize',18);
+ylabel('lateral acceleration \it{a_y} / (m/s^2)','FontName','times new roman',...
+    'FontSize',18);
+
+ax1 = gca; % get current axes handle, you can also use 'ax = gca'.
+ax1.FontName = 'times new roman';
+ax1.FontSize = 18;
+% ax1.Color = [239, 237, 245] / 255;
+set(ax1,'LineWidth',1.2); % you can also do settings like this.
+set(ax1,'Box','on');
+ax1.TickDir = 'out';
+set(ax1,'GridLineStyle','--');
+set(ax1,'GridAlpha',0.3);
+% grid on;
+
+% set figure location on the screen,given left lower and right upper
+% points's location.
+set(f_acc{i},'Position',[100 100 650 450]);
+
+if save_enable_acc == 1
+   saveas(f_acc{i},fullfile(image_path, ['acceleration',num2str(i),'.svg']));
+   saveas(f_acc{i},fullfile(image_path, ['acceleration',num2str(i),'.png']));
+   savefig(f_acc{i}, fullfile(image_path, ['acceleration',num2str(i)]));
 end
 end
