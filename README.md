@@ -8,15 +8,13 @@ This repo gives examples for better plotting configuration in Matlab and Python.
 
 There are two ways to change a figure's properties, one is to change the default settings which is a permanent approach, the other is to change the properties of the specific figure directly. If you are afraid of making a mess by changing the default settings, you may like the second one, and it is recommended to do this by calling a user-defined function by yourself if you have to configure lots of properties for each single figure, which leads to clean code styles.
 
-#### Matlab
-
-- [Matlab plot](src/matlab/easy_plot.m) gives you an example using the second approach to change figures' properties.
+- [basic_example](src/matlab/basic_example/basic_example.m) gives you an example using the second approach to change figures' properties.
 
 <img src="images/easy_plot_using_matlab_1.png" width="50%" alt="example plotting in matlab"><img src="images/easy_plot_using_matlab_2.png" width="50%" alt="example plotting in matlab">
 
-#### Python
+### fig_plot: advanced figure plot example
 
-- [Python plot (coming soon)](src/Python/easy_plot.py)
+This is an example to show how to plot figure based on csv file in a batch approach. Figure property configuration is similar to [basic_example](src/matlab/basic_example/basic_example.m).
 
 ### fig_splice: automatic figure splicing
 
@@ -34,6 +32,10 @@ You can also set the columns of the output image and whether or not cutting imag
 
 * Python > 3.0
 * Matlab > 2014b
+
+## to-do
+
+- [ ] Python version (coming soon)
 
 ## Contributing
 
