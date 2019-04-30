@@ -17,7 +17,7 @@ for i = 1:figure_num
    tmp_image = imread(fullfile(image_path,fig_group(i).name), imgtype);
    size_matrix(i,:) = size(tmp_image);
 end
-result = tabulate(size_matrix(:,1)*0.1);
+result = tabulate(size_matrix(:,1)*0.01);
 label = find(max(result(:,2)) == result(:,2));
 image_size = size_matrix(label(1), :);
 disp(image_size)
