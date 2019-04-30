@@ -21,7 +21,7 @@ Parameter configuration:
 - `image_path`: choose the path to save your figure. The default setting is the current folder.
 - `global_path_file` and `state_name`: the path to search certain groups of files.
 
-And it is worth noting that you can set the color of your figure specified as an RGB triplet in Matlab. You can see `how to choose color` below for more recommendation to choose color.
+And it is worth noting that you can specify the color of your figure as an RGB triplet in Matlab. See `how to choose color` below for more recommendation to choose harmonious color.
 
 ```matlab
 % plot color setting
@@ -52,7 +52,7 @@ You can also set the columns of the output image and whether or not cutting imag
 
 ## how to choose color
 
-There are some tools to choose color used in your figure, which makes your plots more beautiful.
+There are some tools for guidance in choosing choropleth map color schemes, which makes your plots more beautiful.
 
 - [ColorBrewer2](http://colorbrewer2.org/)
 - [Adobe Color](https://color.adobe.com/zh/create/image/)
@@ -61,7 +61,7 @@ There are some tools to choose color used in your figure, which makes your plots
 |:------------:|:-----------:|
 |<img src="/images/colorbrewer2.png" width="100%" alt="vrep_sim_scene">|<img src="/images/adobe_color.png" width="100%" alt="Adobe Color">|
 
-Here is a comparison by using built-in color and color found on the website ColorBrewer2:
+Here is a comparison by using built-in color and color chosen from ColorBrewer2:
 
 |`using built-in color`|`using color in ColorBrewer2`|
 |:------------:|:-----------:|
