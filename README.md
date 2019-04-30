@@ -52,7 +52,7 @@ You can also set the columns of the output image and whether or not cutting imag
 
 ## how to choose color
 
-There are some tools for guidance in choosing choropleth map color schemes, which makes your plots more beautiful.
+There are some tools for guidance in choosing color schemes, which makes your plots more beautiful.
 
 - [ColorBrewer2](http://colorbrewer2.org/)
 - [Adobe Color](https://color.adobe.com/zh/create/image/)
