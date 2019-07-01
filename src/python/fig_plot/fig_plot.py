@@ -98,7 +98,7 @@ plt.yticks(np.linspace(y_min_scale, y_max_scale, 5))
 ## legend setting
 plt.xlabel('x')
 plt.ylabel('y')
-plt.title('path comparison')
+# plt.title('path comparison')
 plt.legend(handles=lines, loc='best', frameon=False, ncol=1)
 
 ## grid
@@ -151,7 +151,7 @@ for data in dataset:
     ## legend setting
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.title('path comparison')
+    # plt.title('steering angle')
     plt.legend(loc='best', frameon=False, ncol=1)
 
     ## grid
@@ -175,17 +175,28 @@ for data in dataset:
 
     fig = plt.figure(figsize=figsize_inch, dpi=fig_dpi, frameon=False)
     ax = fig.add_subplot(111)
-    line_des, = ax.plot(time_cur, lateral_error, 
+    line_1, = ax.plot(time_cur, lateral_error, 
         linestyle='-', color=green_lv2, label='lateral error')
-    line_cur, = ax.plot(time_cur, heading_error, 
-        linestyle='--', color=green_lv3, label='heading error')
-    lines = [line_des, line_cur]
 
+    # range and ticks setting
+    y_min = np.min(lateral_error)
+    y_max = np.max(lateral_error)
+    ry = y_max - y_min
+    scale = 10
+    resolution = 1
+    y_min_scale = np.round((y_min - ry/scale)/resolution) * resolution
+    y_max_scale = np.round((y_max + ry/scale)/resolution) * resolution
+    ax.set_ylim([y_min_scale, y_max_scale])
+    plt.yticks(np.linspace(y_min_scale, y_max_scale, 5))
+
+    ax2 = ax.twinx()
+    line_2, = ax2.plot(time_cur, heading_error, 
+        linestyle='--', color=green_lv3, label='heading error')
     # range and ticks setting
     x_min = np.min(time_cur)
     x_max = np.max(time_cur)
-    y_min = np.min(lateral_error)
-    y_max = np.max(lateral_error)
+    y_min = np.min(heading_error)
+    y_max = np.max(heading_error)
     rx = x_max - x_min
     ry = y_max - y_min
     scale = 10
@@ -194,18 +205,18 @@ for data in dataset:
     x_max_scale = np.round((x_max + rx/scale)/resolution) * resolution
     y_min_scale = np.round((y_min - ry/scale)/resolution) * resolution
     y_max_scale = np.round((y_max + ry/scale)/resolution) * resolution
-    ax.axis([x_min_scale, x_max_scale, y_min_scale, y_max_scale])
+    ax.set_xlim([x_min_scale, x_max_scale])
+    ax2.set_ylim([y_min_scale, y_max_scale])
     plt.xticks(np.linspace(x_min_scale, x_max_scale, 5))
     plt.yticks(np.linspace(y_min_scale, y_max_scale, 5))
 
     ## legend setting
-    plt.xlabel('time (s)')
-    plt.ylabel('lateral error (m)')
-    plt.title('path comparison')
-    plt.legend(loc='best', frameon=False, ncol=1)
-
-    ## grid
-    plt.grid(True, color=gray, alpha=0.3)
+    ax.set_ylabel('lateral error (m)')
+    ax2.set_ylabel('heading error (deg)')
+    ax.set_xlabel('time (s)')
+    # plt.title('tracking error')
+    ax.legend(loc=1, frameon=False, ncol=1)
+    ax2.legend(loc=2, frameon=False, ncol=1)
 
     ## save
     if save_enable:
@@ -252,7 +263,7 @@ for data in dataset:
     ## legend setting
     plt.xlabel('time (s)')
     plt.ylabel('velocity (m/s)')
-    plt.title('velocity')
+    # plt.title('velocity')
     plt.legend(loc='best', frameon=False, ncol=1)
 
     ## grid
@@ -298,7 +309,7 @@ for data in dataset:
     ## legend setting
     plt.xlabel('time (s)')
     plt.ylabel('acceleration (% m/s^2 %)')
-    plt.title('acceleration')
+    # plt.title('acceleration')
     plt.legend(loc='best', frameon=False, ncol=1)
 
     ## grid

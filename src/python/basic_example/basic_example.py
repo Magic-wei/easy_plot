@@ -9,10 +9,19 @@
 ---------------------------------
 '''
 
+import os
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import pandas as pd
 import numpy as np
+
+# parameter setting
+fig_dpi = 100; # inches = pixels / dpi
+figsize_inch = list(np.array([800, 600]) / fig_dpi)
+save_enable = False
+script_path = os.path.split(os.path.realpath(__file__))[0]
+image_path = script_path
+
 
 # customize style
 # plt.style.use('ggplot')
@@ -31,7 +40,7 @@ mpl.rcParams['ytick.labelsize'] = 16
 gray = list(np.array([99, 99, 99]) / 255.0)
 
 # plot
-fig = plt.figure(num=1, dpi=150, frameon=False)
+fig = plt.figure(num=1, figsize=figsize_inch, dpi=fig_dpi, frameon=False)
 x1 = range(1,21)
 y1 = np.random.uniform(0,1,len(x1))
 coeffis = np.polyfit(x1, y1, 5)
@@ -67,5 +76,9 @@ plt.legend(handles=[line_1, line_2], loc='best', frameon=False, ncol=1)
 
 # grid off
 plt.grid(True, color=gray, alpha=0.3)
+
+if save_enable:
+    save_name = 'easy_plot_using_python'
+    plt.savefig(os.path.join(script_path, '%s.png'%(save_name)))
 
 plt.show()
