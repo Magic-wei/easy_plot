@@ -149,8 +149,8 @@ for data in dataset:
     plt.yticks(np.linspace(y_min_scale, y_max_scale, 5))
 
     ## legend setting
-    plt.xlabel('x')
-    plt.ylabel('y')
+    plt.xlabel('time (s)')
+    plt.ylabel('sterring angle (deg)')
     # plt.title('steering angle')
     plt.legend(loc='best', frameon=False, ncol=1)
 
